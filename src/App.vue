@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/filters">Filtros</router-link> |
-    <router-link to="/continentTable">Tabela Continentes</router-link>
+    <router-link to="/continentTable">Tabela Continentes</router-link> |
+    <router-link to="/languageTable">Tabela Idiomas</router-link>
   </nav>
   <router-view/>
 </template>
