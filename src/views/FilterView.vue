@@ -190,7 +190,7 @@
   content: '';
   width: 15px;
   height: 15px;
-  background: #2c3e50;
+  background: #42b983;
   border-radius: 50%;
   opacity: 0;
   transition: all 600ms ease-in-out;
@@ -200,7 +200,7 @@
 .app__filter-option .checkbox:before {
   border-radius: 0;
   background: transparent;
-  border: 4px solid #2c3e50;
+  border: 4px solid #42b983;
   border-left: 0;
   border-top: 0;
   width: 7px;
