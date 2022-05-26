@@ -83,7 +83,7 @@ Inicie os testes com o comando:
 npx cypress open
 ```
 
-Navegue até a pasta _testes/e2e_ e selecione o arquivo de teste de sua preferência.
+Navegue até a pasta _tests/e2e_ e selecione o arquivo de teste de sua preferência.
 ## Usando a aplicação
 
 Assim que a aplicação iniciar, você poderá selecionar quais filtros deseja visualizar.
