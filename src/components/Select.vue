@@ -31,16 +31,16 @@ export default defineComponent ({
     textDefaultOption: {
       type: String,
       required: true
-    },
+    },  
     loading: {
-      type: String,
+      type: Boolean,
       required: true
     },
     error: {
-      type: String,
       required: false
     },
     data: {
+      type: [Object],
       required: true
     },
   },
