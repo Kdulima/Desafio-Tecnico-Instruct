@@ -3,12 +3,12 @@
     <table class="countries__table">
       <thead>
         <tr>
-          <th>Bandeira</th>
-          <th>Continente</th>
-          <th>País</th>
-          <th>Nome nativo</th>
-          <th>Capital</th>
-          <th>Moeda</th>
+          <th style="width: 5%">Flag</th>
+          <th style="width: 15%">Continent</th>
+          <th style="width: 20%">Country</th>
+          <th style="width: 20%">Native name</th>
+          <th style="width: 20%">Capital</th>
+          <th style="width: 20%">Currency</th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +17,7 @@
           :key="country.code"
         >
           <td>{{ country.emoji }}</td>
-          <td>{{ country.continent.name }}</td>
+          <td>{{ country?.continent?.name }}</td>
           <td>{{ country.name }}</td>
           <td>{{ country.native }}</td>
           <td>{{ country.capital }}</td>
@@ -29,8 +29,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { useQuery, useResult } from '@vue/apollo-composable';
+import { defineComponent, computed } from 'vue';
+import { useQuery } from '@vue/apollo-composable';
 import COUNTRIES_QUERY from '../services/queries/Countries';
 
 export default defineComponent ({
@@ -47,7 +47,7 @@ export default defineComponent ({
   },
   setup() {
     const { result, loading, error } = useQuery(COUNTRIES_QUERY);
-    const countries = useResult(result)
+    const countries = computed(() => result.value?.countries ?? [])
 
     return {
       countries,
