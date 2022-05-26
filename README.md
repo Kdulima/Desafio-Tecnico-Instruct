@@ -2,7 +2,7 @@
 
 > Habitue é uma aplicação _frontend_ desenvolvida para o desafio técnico da empresa **Instruct**. Nela você irá consumir os dados da [Countries GraphQL API](https://countries.trevorblades.com/graphql) de forma dinâmica, filtrando os **continentes**, **idiomas** e também **países com mais de 1 idioma** existentes na base de dados.
 
-### Para conferir a aplicação em funcionamento, acesse: [https://instructhabitue.vercel.app/)](https://instructhabitue.vercel.app/)
+### Para conferir a aplicação em funcionamento, acesse: [https://instructhabitue.vercel.app/](https://instructhabitue.vercel.app/)
 
 ## 🛠️ Tecnologias e Ferramentas utilizadas
 
@@ -49,11 +49,11 @@ Local: http://localhost:3000/
 Abra seu navegador `Google Chrome` e digite o seguinte link:
 [http://localhost:3000/](http://localhost:3000/)
 
-Aguarde até que o aplicacação seja iniciada.
+Aguarde até que a aplicacação seja iniciada.
 
 ## Testando a aplicação
 
-Esta aplicação possui testes unitários com o framework **Jest** e testes _e2e_ com o _**cypress**_. **Para executá-los e verificar a cobertura do teste, siga estas instruções:**
+Esta aplicação possui testes unitários com o framework **Jest** e testes _e2e_ com o _**cypress**_. **Para executá-los e verificar a cobertura dos testes, siga estas instruções:**
 
 ### **Testes unitários**
 
