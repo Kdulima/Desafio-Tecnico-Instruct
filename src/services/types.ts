@@ -16,6 +16,6 @@ export type CountryType = {
   currency: string;
   emoji: string;
   capital: string;
-  languages: LanguageType;
+  languages: LanguageType[];
   continent: ContinentType;
 }

@@ -7,13 +7,14 @@
           <th style="width: 15%">Continent</th>
           <th style="width: 20%">Country</th>
           <th style="width: 20%">Native name</th>
-          <th style="width: 20%">Capital</th>
-          <th style="width: 20%">Currency</th>
+          <th style="width: 15%">Capital</th>
+          <th style="width: 15%">Currency</th>
+          <th style="width: 10%">Languages</th>
         </tr>
       </thead>
       <tbody>
         <tr 
-          v-for="country in countries"
+          v-for="country in filteredCountries"
           :key="country.code"
         >
           <td>{{ country.emoji }}</td>
@@ -22,6 +23,7 @@
           <td>{{ country.native }}</td>
           <td>{{ country.capital }}</td>
           <td>{{ country.currency }}</td>
+          <td>{{ getNameLanguages(country.languages) }}</td>
         </tr>
       </tbody>
     </table>
@@ -29,9 +31,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, toRefs, ref, watch } from 'vue';
 import { useQuery } from '@vue/apollo-composable';
 import COUNTRIES_QUERY from '../services/queries/Countries';
+import { LanguageType, CountryType } from '../services/types';
 
 export default defineComponent ({
   name: 'Countries',
@@ -43,22 +46,69 @@ export default defineComponent ({
     language: {
       type: String,
       required: false
+    },
+    moreLanguages: {
+      type: Boolean,
+      required: false
     }
   },
-  setup() {
+  setup(props) {
     const { result, loading, error } = useQuery(COUNTRIES_QUERY);
-    const countries = computed(() => result.value?.countries ?? [])
+    const { continent: continentCode, language: languageCode, moreLanguages } = toRefs(props)
+
+    const countries = ref(result.value?.countries ?? [])
+    const allCountries = computed(() => result.value?.countries ?? [])
+
+    const filteredCountries = computed({
+      get: () => {
+        let result = allCountries.value
+        
+        if (continentCode && continentCode.value !== '') {
+          result = result.filter((country: CountryType) => country.continent.code === continentCode.value)
+        }
+
+        if (languageCode && languageCode.value !== '') {
+          result = result.filter((country: CountryType) => {
+            const filteredLanguages = country.languages.filter((language: any) => {
+              return language.code === languageCode.value
+            })
+
+            return filteredLanguages.length > 0
+          })
+        }
+        
+        if (moreLanguages && moreLanguages.value === true) {
+          result = result.filter((country: CountryType) => country.languages.length > 1)
+        }
+
+        return result
+      },
+      set: (newList) => {
+        countries.value = newList
+      }
+    })
 
     return {
-      countries,
+      allCountries,
+      continentCode,
+      filteredCountries,
       loading,
       error
     };
   },
-  methods: {
-
+  watch: {
+    continent() {
+      this.filteredCountries = this.allCountries
+    },
+    language() {
+      this.filteredCountries = this.allCountries
+    }
   },
-  watch: {}
+  methods: {
+    getNameLanguages(languages: LanguageType[]) {
+      return languages.map((language: LanguageType) => language.name).join(', ')
+    }
+  }
 });
 
 </script>

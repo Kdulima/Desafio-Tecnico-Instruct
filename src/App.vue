@@ -33,7 +33,8 @@ export default defineComponent ({
   data() {
     return {
       continent: '',
-      language: ''
+      language: '',
+      moreLanguages: false,
     }
   },
   methods: {
@@ -67,7 +68,13 @@ export default defineComponent ({
     </div>
 
     <div class="filters__checkbox">
-      <input class="filters__checkbox__input" id="checkbox1" type='checkbox' />
+      <input
+        class="filters__checkbox__input"
+        id="checkbox1"
+        type="checkbox"
+        :value="true"
+        v-model="moreLanguages"
+      />
       <label for="checkbox1">Países +1 idioma</label>
     </div>
 
@@ -86,7 +93,11 @@ export default defineComponent ({
 
   <div class="countries">
     <h1 class="countries__title">Countries</h1>
-    <Countries :continent="continent" :language="language" />
+    <Countries
+      :continent="continent"
+      :language="language"
+      :moreLanguages="moreLanguages"
+    />
   </div>
 </template>
 
