@@ -2,7 +2,7 @@
 
 > Habitue é uma aplicação _frontend_ desenvolvida para o desafio técnico da empresa **Instruct**. Nela você irá consumir os dados da [Countries GraphQL API](https://countries.trevorblades.com/graphql) de forma dinâmica, filtrando os **continentes**, **idiomas** e também **países com mais de 1 idioma** existentes na base de dados.
 
-### Para conferir a aplicação em funcionamento, acesse: [https://.vercel.app/](https://instructhabitue.vercel.app/)
+### Para conferir a aplicação em funcionamento, acesse: [https://instructhabitue.vercel.app/)](https://instructhabitue.vercel.app/)
 
 ## 🛠️ Tecnologias e Ferramentas utilizadas
 
