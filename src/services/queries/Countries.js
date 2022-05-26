@@ -2,9 +2,22 @@ import gql from 'graphql-tag';
 
 const COUNTRIES_QUERY = gql`
 query {
-  countries(filter: {continent: {eq: "AF"}}) {
-    code,
+  countries {
+    code
     name
+    native
+    currency
+    emoji
+    capital
+    languages {
+      code
+      name
+      native
+    }
+    continent {
+      code
+      name
+    }
   }
 }
 `;
