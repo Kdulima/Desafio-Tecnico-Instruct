@@ -53,7 +53,7 @@ Aguarde até que a aplicacação seja iniciada.
 
 ## Testando a aplicação
 
-Esta aplicação possui testes unitários com o framework **Jest** e testes _e2e_ com o _**cypress**_. **Para executá-los e verificar a cobertura dos testes, siga estas instruções:**
+Esta aplicação possui testes unitários com o framework **Jest**. **Para executá-los e verificar a cobertura dos testes, siga estas instruções:**
 
 ### **Testes unitários**
 
@@ -66,24 +66,6 @@ Inicie os testes com o comando:
 npm test
 ```
 
-### **Testes _e2e_**
-
-Navegue até a pasta `raiz` do projeto
-```
-cd Desafio-Tecnico-Instruct
-```
-
-Inicie a aplicação com o comando:
-```
-npm run dev
-```
-
-Inicie os testes com o comando:
-```
-npx cypress open
-```
-
-Navegue até a pasta _tests/e2e_ e selecione o arquivo de teste de sua preferência.
 ## Usando a aplicação
 
 Assim que a aplicação iniciar, você poderá selecionar quais filtros deseja visualizar.
