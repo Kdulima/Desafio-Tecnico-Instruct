@@ -53,18 +53,7 @@ Aguarde até que a aplicacação seja iniciada.
 
 ## Testando a aplicação
 
-Esta aplicação possui testes unitários com o framework **Jest**. **Para executá-los e verificar a cobertura dos testes, siga estas instruções:**
-
-### **Testes unitários**
-
-Navegue até a pasta `raiz` do projeto
-```
-cd Desafio-Tecnico-Instruct
-```
-Inicie os testes com o comando:
-```
-npm test
-```
+WIP
 
 ## Usando a aplicação
 
